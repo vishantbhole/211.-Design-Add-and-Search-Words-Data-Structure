@@ -17,3 +17,14 @@ class WordDictionary:
                 cur.children[c] = TrieNode()
             cur = cur.children[c]
         cur.word = True
+
+    def search(self, word: str) -> bool:
+        def dfs(j, root):
+            cur = root
+            for i in range(j, len(word)):
+                c = word[i]
+                if c == ".":
+                    for child in cur.children.values():
+                        if dfs(i + 1, child):
+                            return True
+                    return False
