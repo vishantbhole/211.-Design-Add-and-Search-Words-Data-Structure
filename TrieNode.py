@@ -8,3 +8,12 @@ class TrieNode:
 class WordDictionary:
     def __init__(self):
         self.root = TrieNode()
+
+
+    def addWord(self, word: str) -> None:
+        cur = self.root
+        for c in word:
+            if c not in cur.children:
+                cur.children[c] = TrieNode()
+            cur = cur.children[c]
+        cur.word = True
