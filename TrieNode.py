@@ -34,3 +34,9 @@ class WordDictionary:
                     cur = cur.children[c]
             return cur.word
         return dfs(0, self.root)
+
+# Example usage:
+obj = WordDictionary()
+obj.addWord("bad")
+obj.addWord("dad")
+obj.addWord("mad")
