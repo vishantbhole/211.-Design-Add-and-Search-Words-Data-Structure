@@ -28,3 +28,9 @@ class WordDictionary:
                         if dfs(i + 1, child):
                             return True
                     return False
+                else:
+                    if c not in cur.children:
+                        return False
+                    cur = cur.children[c]
+            return cur.word
+        return dfs(0, self.root)
